@@ -15,6 +15,9 @@
 # Sex
 
 
+# search for all deaths in 2015 in each state
+# return name, age, cause, state, race, sex
+
 module TheCountedWrapper
   def self.name
 

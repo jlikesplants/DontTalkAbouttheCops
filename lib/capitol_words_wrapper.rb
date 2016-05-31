@@ -27,7 +27,7 @@ module CapitolWordsWrapper
     #   {state: "VA", count: 9}
     # ]
 
-    uri = Addressable::URI.parse(API_ENDPOINT + "/phrases/sta te.json")
+    uri = Addressable::URI.parse(API_ENDPOINT + "/phrases/state.json")
     uri.query_values = {
       phrase: phrase,
       sort: "count",
