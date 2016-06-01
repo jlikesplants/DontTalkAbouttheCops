@@ -8,9 +8,17 @@
 </head>
 <body>
 
-  <h1>Home</h1>
+  <h1>Searching for Words </h1>
+  <%= @words.each do |row| %>
+  <%= row["state"] %>
+  <%= row["count"] %>
+  <% end %>
 
-<%= yield %>
+  <h1>Police-related fatalities</h1>
+  <%= @fatalities.each do |row| %>
+  <%= row["name"] %>
+  <%= row["age"] %>
+  <% end %>
 
 </body>
 </html>

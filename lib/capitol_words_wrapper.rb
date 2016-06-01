@@ -19,20 +19,17 @@ module CapitolWordsWrapper
 
   STATES = %w(WA CA VA)
   API_ENDPOINT = "http://capitolwords.org/api/1"
+  START_DATE = "2015-01-01"
+  END_DATE = "2015-12-31"
 
   def self.phrase(phrase)
-    # table = [
-    #   {state: "WA", count: 2},
-    #   {state: "CA", count: 4},
-    #   {state: "VA", count: 9}
-    # ]
 
     uri = Addressable::URI.parse(API_ENDPOINT + "/phrases/state.json")
     uri.query_values = {
       phrase: phrase,
       sort: "count",
-      start_date: "2015-01-01",
-      end_date: "2015-12-31",
+      start_date: START_DATE,
+      end_date: END_DATE,
       apikey: ENV["SUNLIGHT_FOUNDATION_KEY"]
     }
 

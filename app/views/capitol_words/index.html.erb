@@ -8,9 +8,11 @@
 </head>
 <body>
 
-  <h1>Home</h1>
-
-<%= yield %>
+  <h1>Searching for Words </h1>
+  <%= @words.each do |row| %>
+  <%= row["state"] %>
+  <%= row["count"] %>
+  <% end %>
 
 </body>
 </html>
