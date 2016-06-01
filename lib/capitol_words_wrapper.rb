@@ -17,7 +17,8 @@
 
 module CapitolWordsWrapper
 
-  STATES = %w(WA CA VA)
+  STATES = %w(AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY)
+
   API_ENDPOINT = "http://capitolwords.org/api/1"
   START_DATE = "2015-01-01"
   END_DATE = "2015-12-31"
@@ -38,7 +39,4 @@ module CapitolWordsWrapper
 
   end
 
-  def self.state
-
-  end
 end

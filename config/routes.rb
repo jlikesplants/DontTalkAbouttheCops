@@ -55,4 +55,5 @@ Rails.application.routes.draw do
   #   end
 
   root 'query#index'
+  # get '/search' => 'query#search', as: 'submit_search'
 end

@@ -7,7 +7,18 @@ class QueryController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
-    @words = CapitolWordsWrapper.phrase("civil rights")
+    @phrase = "civil rights"
+    @year = "2015"
+    @words = CapitolWordsWrapper.phrase(@phrase)
     @fatalities = TheCountedWrapper.year(@year)
   end
+
+  def search
+    if params[:search]
+      @phrase_search = CapitolWordsWrapper.phrase(params[:search])
+    else
+      @phrase_search = CapitolWordsWrapper.phrase("civil rights")
+    end
+  end
+
 end

@@ -9,16 +9,35 @@
 <body>
 
   <h1>Searching for Words </h1>
-  <%= @words.each do |row| %>
-  <%= row["state"] %>
-  <%= row["count"] %>
+  <% @words.each do |row| %>
+  Phrase: <%= @phrase %><br>
+  State: <%= row["state"] %><br>
+  Times mentioned: <%= row["count"] %><br>
   <% end %>
 
   <h1>Police-related fatalities</h1>
   <%= @fatalities.each do |row| %>
-  <%= row["name"] %>
-  <%= row["age"] %>
+  Name: <%= row[:name] %><br>
+  Age: <%= row[:age] %><br>
+  Sex: <%= row[:sex] %><br>
+  Race: <%= row[:age] %><br>
+  State: <%= row[:state] %><br>
+  Cause: <%= row[:cause] %><br>
   <% end %>
+
+  <!-- <h1>Search for a Phrase</h1> -->
+  <%#= form_tag(submit_search_path, :method => "get") do %>
+  <%#= text_field_tag :search, params[:search], placeholder: "Search Records" %>
+  <%#= submit_tag "Search" %>
+  <%# end %>
+
+  <%#= render partial: 'search' %>
+
+  <%#= link_to 'Civil Rights', phrase_path %>
+  <%#= link_to render(:partial => 'phrase'), phrase_path %>
+  <%#= link_to 'Civil Rights', phrase_path %>
+
+
 
 </body>
 </html>

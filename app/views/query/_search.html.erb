@@ -1,0 +1,7 @@
+
+
+<% if @phrase_search.present? %>
+<%= render @phrase_search %>
+<% else %>
+<p>There are no records containing the term(s) <%= params[:search] %>.</p>
+<% end %>
