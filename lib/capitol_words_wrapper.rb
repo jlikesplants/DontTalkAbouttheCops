@@ -24,7 +24,6 @@ module CapitolWordsWrapper
   END_DATE = "2015-12-31"
 
   def self.phrase(phrase)
-
     uri = Addressable::URI.parse(API_ENDPOINT + "/phrases/state.json")
     uri.query_values = {
       phrase: phrase,
@@ -36,7 +35,25 @@ module CapitolWordsWrapper
 
     table = HTTParty.get(uri.normalize.to_s).parsed_response["results"]
     table.map { |row| row.merge("count" => row["count"].to_i) }.select { |row| STATES.include?(row["state"]) }
+  end
 
+  def self.state(state, phrase)
+    all = phrase(phrase)
+    phrase.find_all { |row| row[:state] == state.to_s.upcase}
+  end
+
+  def self.total_mentions(phrase)
+    all = phrase(phrase)
+    sum = 0
+    all.each do |row|
+      sum += row["count"]
+    end
+    sum
+  end
+
+  def self.min_max(phrase)
+    all = phrase(phrase)
+    all.minmax_by { |row| row["count"].to_i }
   end
 
 end

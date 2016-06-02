@@ -1,0 +1,10 @@
+  <h1> Civil Rights - 2015 </h1>
+
+  <ul>
+    <li>total mentions: <%= @total_mentions %></li>
+    <li>state where "civil rights" mentioned most: <%= @min_max[1]["state"] %>, <%= @min_max[1]["count"] %> times</li>
+    <li>and least: <%= @min_max[0]["state"] %>, <%= @min_max[0]["count"] %> times</li>
+  </ul>
+
+  <%= @state %>
+  <%= @matched_fatalities %>

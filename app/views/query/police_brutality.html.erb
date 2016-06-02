@@ -1,0 +1,17 @@
+<h1>Searching for Words </h1>
+<% @words.each do |row| %>
+Phrase: <%= @phrase %><br>
+State: <%= row["state"] %><br>
+Times mentioned: <%= row["count"] %><br>
+<% end %>
+
+<h1>Police-related fatalities</h1>
+<%= @matched_fatalities.each do |row| %>
+Name: <%= row[:name] %><br>
+Age: <%= row[:age] %><br>
+Sex: <%= row[:sex] %><br>
+Race: <%= row[:age] %><br>
+State: <%= row[:state] %><br>
+Cause: <%= row[:cause] %><br>
+Mentions: <%#= @words.find_by[:state] %><br>
+<% end %>
