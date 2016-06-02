@@ -16,13 +16,14 @@
   <% end %>
 
   <h1>Police-related fatalities</h1>
-  <%= @fatalities.each do |row| %>
+  <%= @matched_fatalities.each do |row| %>
   Name: <%= row[:name] %><br>
   Age: <%= row[:age] %><br>
   Sex: <%= row[:sex] %><br>
   Race: <%= row[:age] %><br>
   State: <%= row[:state] %><br>
   Cause: <%= row[:cause] %><br>
+  Mentions: <%#= @words.find_by[:state] %><br>
   <% end %>
 
   <!-- <h1>Search for a Phrase</h1> -->

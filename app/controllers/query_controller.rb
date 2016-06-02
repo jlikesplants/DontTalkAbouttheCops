@@ -11,6 +11,7 @@ class QueryController < ActionController::Base
     @year = "2015"
     @words = CapitolWordsWrapper.phrase(@phrase)
     @fatalities = TheCountedWrapper.year(@year)
+    @matched_fatalities = TheCountedWrapper.state("CA", "2015")
   end
 
   def search
