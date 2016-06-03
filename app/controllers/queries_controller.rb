@@ -1,7 +1,7 @@
 require 'capitol_words_wrapper'
 require 'the_counted_wrapper'
 
-class QueryController < ActionController::Base
+class QueriesController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -11,7 +11,7 @@ class QueryController < ActionController::Base
     @year = "2015"
     @words = CapitolWordsWrapper.phrase(@phrase)
     @fatalities = TheCountedWrapper.year(@year)
-    @matched_fatalities = TheCountedWrapper.state(@state)
+    @matched_fatalities = TheCountedWrapper.state_fatalities(@state)
   end
 
   def search

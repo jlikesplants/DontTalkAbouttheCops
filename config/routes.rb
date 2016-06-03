@@ -54,9 +54,9 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  root 'query#index'
-  # get '/search' => 'query#search', as: 'submit_search'
-  get '/civil_rights' => 'query#civil_rights', as: 'civil_rights'
-  get '/black_lives_matter' => 'query#black_lives_matter', as: 'blm'
-  get '/police_brutality' => 'query#police_brutality', as: 'police_brutality'
+  root 'queries#index'
+  # get '/search' => 'queries#search', as: 'submit_search'
+  get '/civil_rights' => 'queries#civil_rights', as: 'civil_rights'
+  get '/black_lives_matter' => 'queries#black_lives_matter', as: 'blm'
+  get '/police_brutality' => 'queries#police_brutality', as: 'police_brutality'
 end
