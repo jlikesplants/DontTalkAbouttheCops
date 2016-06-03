@@ -23,11 +23,15 @@ class QueryController < ActionController::Base
   end
 
   def civil_rights
+    @year = "2015"
     @phrase = "civil rights"
     @state = CapitolWordsWrapper::STATES
-    @matched_fatalities = TheCountedWrapper.state(@state)
     @total_mentions = CapitolWordsWrapper.total_mentions(@phrase)
-    @min_max = CapitolWordsWrapper.min_max(@phrase)
+    @min_max_mentions = CapitolWordsWrapper.min_max(@phrase)
+    @min_fatalities_phrase = TheCountedWrapper.state_fatalities(@min_max_mentions[0]["state"])
+    @max_fatalities_phrase = TheCountedWrapper.state_fatalities(@min_max_mentions[1]["state"])
+    @fatalities = TheCountedWrapper.total_fatalities(@year)
+    @min_max_fatalities_state = TheCountedWrapper.min_max_fatalities
   end
 
   def blm
