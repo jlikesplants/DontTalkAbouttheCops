@@ -22,6 +22,18 @@ class QueriesController < ActionController::Base
     end
   end
 
+  def show
+    @year = "2015"
+    @phrase = params["id"].gsub!(/[^0-9a-z]/i, ' ')
+    @state = CapitolWordsWrapper::STATES
+    @total_mentions = CapitolWordsWrapper.total_mentions(@phrase)
+    @min_max_mentions = CapitolWordsWrapper.min_max(@phrase)
+    @min_fatalities_phrase = TheCountedWrapper.state_fatalities(@min_max_mentions[0]["state"])
+    @max_fatalities_phrase = TheCountedWrapper.state_fatalities(@min_max_mentions[1]["state"])
+    @fatalities = TheCountedWrapper.total_fatalities(@year)
+    @min_max_fatalities_state = TheCountedWrapper.min_max_fatalities
+  end
+
   def civil_rights
     @year = "2015"
     @phrase = "civil rights"
