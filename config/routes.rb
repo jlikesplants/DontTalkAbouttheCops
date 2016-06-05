@@ -54,12 +54,8 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-
-  # DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'index'` to `controller: 'index'`. (called from block in <top (required)> at /Users/justinewinnie/Desktop/c5/projects/DontTalk/config/routes.rb:57)
-
-  get '/' => 'queries#index'
-  # root 'queries#index'
-  # get '/search' => 'queries#search', as: 'submit_search'
+  root 'queries#index'
+  get '/search' => 'queries#show', as: 'submit_search'
   get '/queries/:id' => 'queries#show', as: 'queries'
   # get '/civil_rights' => 'queries#civil_rights', as: 'civil_rights'
   # get '/black_lives_matter' => 'queries#black_lives_matter', as: 'blm'
