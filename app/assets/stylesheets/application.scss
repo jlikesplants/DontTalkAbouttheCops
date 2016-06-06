@@ -10,6 +10,17 @@
   list-style: none;
 }
 
+.data ul {
+  background-color: gray;
+  color: white;
+  border-radius: 4px;
+  list-style: none;
+  width: 45%;
+  height: 100px;
+  padding-top: 20px;
+  display: inline-block;
+}
+
 .search-bar {
   float: right;
   padding: 30px 15px;
@@ -20,4 +31,10 @@
 
 input#search.form-control {
   border-radius: 4px;
+}
+
+h2.navbar-header.navbar-brand {
+  color: red;
+  display: block;
+  width: 100%;
 }
