@@ -1,35 +1,43 @@
 <h1> <%= @phrase %> - 2015 </h1>
 
-<ul>
-  <li>total mentions: <%= @total_mentions %></li>
-  <li>state where <%= @phrase %> mentioned most: <%= @min_max_mentions[1]["state"] %>, <%= @min_max_mentions[1]["count"] %> times</li>
-  <li>and least: <%= @min_max_mentions[0]["state"] %>, <%= @min_max_mentions[0]["count"] %> times</li>
-</ul>
+<div class="list">
+  <ul>
+    <li>total mentions: <%= @total_mentions %></li>
+    <li>state where <%= @phrase %> mentioned most: <%= @min_max_mentions[1]["state"] %>, <%= @min_max_mentions[1]["count"] %> times</li>
+    <li>and least: <%= @min_max_mentions[0]["state"] %>, <%= @min_max_mentions[0]["count"] %> times</li>
+  </ul>
+</div>
 
-<ul>
-  <li>total fatalities: <%= @fatalities %></li>
-  <li>state with most fatalities: <%= @min_max_fatalities_state[1]["state"] %>, <%= @min_max_fatalities_state[1]["count"] %> deaths </li>
-  <li>and least: <%= @min_max_fatalities_state[0]["state"] %>, <%= @min_max_fatalities_state[0]["count"] %> deaths </li>
-</ul>
+<div class="list">
+  <ul>
+    <li>total fatalities: <%= @fatalities %></li>
+    <li>state with most fatalities: <%= @min_max_fatalities_state[1]["state"] %>, <%= @min_max_fatalities_state[1]["count"] %> deaths </li>
+    <li>and least: <%= @min_max_fatalities_state[0]["state"] %>, <%= @min_max_fatalities_state[0]["count"] %> deaths </li>
+  </ul>
+</div>
 
-<ul>
-<% @min_fatalities_phrase.each do |row| %>
-<li>Name: <%= row[:name] %></li>
-<li>Age: <%= row[:age] %></li>
-<li>Sex: <%= row[:sex] %></li>
-<li>Race: <%= row[:race] %></li>
-<li>State: <%= row[:state] %></li>
-<li>Cause: <%= row[:cause] %></li>
-<% end %>
-</ul>
+<div class="list">
+  <ul>
+    <% @min_fatalities_phrase.each do |row| %>
+    <li>Name: <%= row[:name] %></li>
+    <li>Age: <%= row[:age] %></li>
+    <li>Sex: <%= row[:sex] %></li>
+    <li>Race: <%= row[:race] %></li>
+    <li>State: <%= row[:state] %></li>
+    <li>Cause: <%= row[:cause] %></li><br>
+    <% end %>
+  </ul>
+</div>
 
-<ul>
-<% @max_fatalities_phrase.each do |row| %>
-<li>Name: <%= row[:name] %></li>
-<li>Age: <%= row[:age] %></li>
-<li>Sex: <%= row[:sex] %></li>
-<li>Race: <%= row[:race] %></li>
-<li>State: <%= row[:state] %></li>
-<li>Cause: <%= row[:cause] %></li>
-<% end %>
-</ul>
+<div class="list">
+  <ul>
+    <% @max_fatalities_phrase.each do |row| %>
+    <li>Name: <%= row[:name] %></li>
+    <li>Age: <%= row[:age] %></li>
+    <li>Sex: <%= row[:sex] %></li>
+    <li>Race: <%= row[:race] %></li>
+    <li>State: <%= row[:state] %></li>
+    <li>Cause: <%= row[:cause] %></li><br>
+    <% end %>
+  </ul>
+</div>

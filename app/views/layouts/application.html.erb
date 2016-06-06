@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Don't Talk About the Cops</title>
+  <title>don't talk about the cops</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Slabo+13px' rel='stylesheet' type='text/css'>
@@ -11,9 +11,10 @@
 </head>
 <body>
     <header>
+      <h1 class="home-page">don't talk about the cops</h1>
       <nav class="navbar navbar-inverse navbar-collapse">
         <%= link_to root_path do %>
-          <h1 class="navbar-header navbar-brand">Home</h1>
+          <h1 class="navbar-header navbar-brand">home</h1>
         <% end %>
         <%= link_to queries_path(:civil_rights) do %>
           <h1 class="navbar-header navbar-brand">see "civil rights"</h1>
@@ -24,6 +25,16 @@
         <%= link_to queries_path(:police_brutality) do %>
           <h1 class="navbar-header navbar-brand">see "police brutality"</h1>
         <% end %>
+
+        <div class="search-bar">
+          <%= form_tag submit_search_path, :method => "get", class: 'input-group'  do %>
+            <%= text_field_tag :search, params[:search], class: 'form-control' %>
+            <span class="input-group-btn">
+              <%= submit_tag "search", class: "btn btn-default" %>
+            </span>
+          <% end %>
+        </div>
+
       </nav>
     </header>
     <section class="container">
