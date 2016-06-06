@@ -1,43 +1,35 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Don't Talk About the Cops</title>
-
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <h1>Home</h1>
-
-    <%= link_to 'Civil Rights', queries_path(:civil_rights) %>
-    <%= link_to 'Black Lives Matter', queries_path(:black_lives_matter) %>
-    <%= link_to 'Police Brutality', queries_path(:police_brutality) %>
-    <%= link_to 'Home', root_path %>
-
-    <h1>Search for a Phrase</h1>
-    <%= form_tag(submit_search_path, :method => "get") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Records" %>
-    <%= submit_tag "Search" %>
-    <% end %>
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+<html>
+<head>
+  <title>Don't Talk About the Cops</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Slabo+13px' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <header>
+      <nav class="navbar navbar-inverse navbar-collapse">
+        <%= link_to root_path do %>
+          <h1 class="navbar-header navbar-brand">Home</h1>
+        <% end %>
+        <%= link_to queries_path(:civil_rights) do %>
+          <h1 class="navbar-header navbar-brand">see "civil rights"</h1>
+        <% end %>
+        <%= link_to queries_path(:black_lives_matter) do %>
+          <h1 class="navbar-header navbar-brand">see "black lives matter"</h1>
+        <% end %>
+        <%= link_to queries_path(:police_brutality) do %>
+          <h1 class="navbar-header navbar-brand">see "police brutality"</h1>
+        <% end %>
+      </nav>
+    </header>
+    <section class="container">
 
     <%= yield %>
+  </section>
 
-  </body>
+</body>
 </html>
